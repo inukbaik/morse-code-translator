@@ -1,6 +1,13 @@
 import json
 
 
+def create_reverse_dict(original_dict):
+    reverse_dict = {}
+    for key, value in original_dict.items():
+        reverse_dict[value] = key
+    return reverse_dict
+
+
 def morse_to_english(morse_code):
     with open('data.json', 'r') as file:
         morse_code_dict = json.load(file)
@@ -17,15 +24,14 @@ def morse_to_english(morse_code):
 def english_to_morse(english):
     with open('data.json', 'r') as file:
         morse_code_dict = json.load(file)
+        reverse_dict = create_reverse_dict(morse_code_dict)
         english = english.upper()
         morse_code = ''
         for letter in english:
             if letter == ' ':
                 morse_code += ' '
-            else:
-                for key, value in morse_code_dict.items():
-                    if value == letter:
-                        morse_code += key + ' '
+            elif letter in reverse_dict:
+                morse_code += reverse_dict[letter] + ' '
     return morse_code
 
 
