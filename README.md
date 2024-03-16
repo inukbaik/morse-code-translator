@@ -49,7 +49,7 @@ This project can be deployed on a live system by executing the `main.py` file on
 - JSON
 
 ## Git Commit Messages
-This project follows the Gitmoji standard for commit messages. Gitmoji emojis are used to easily identify the purpose or intention of a commit. For more information on Gitmoji emojis and their meanings, refer to gitmoji.dev.
+This project follows the Gitmoji standard for commit messages. Gitmoji emojis are used to easily identify the purpose or intention of a commit. For more information on Gitmoji emojis and their meanings, refer to [gitmoji.dev](https://gitmoji.dev/).
 
 ## License
 
