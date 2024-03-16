@@ -11,13 +11,13 @@ def create_reverse_dict(original_dict):
 def morse_to_english(morse_code):
     with open('data.json', 'r') as file:
         morse_code_dict = json.load(file)
-        morse_code = morse_code.split(' ')
-        english = ''
-        for code in morse_code:
-            if code in morse_code:
-                english += morse_code_dict[code]
-            else:
-                english += ' '
+    morse_code = morse_code.split(' ')
+    english = ''
+    for code in morse_code:
+        if code in morse_code_dict:
+            english += morse_code_dict[code]
+        else:
+            english += ''
     return english
 
 
@@ -53,4 +53,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
