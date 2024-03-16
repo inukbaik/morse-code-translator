@@ -35,11 +35,20 @@ def english_to_morse(english):
     return morse_code
 
 
-select = input('Enter 1 for Morse to English, Enter 2 for English to Morse: ')
+def main():
+    try:
+        select = input('Enter 1 for Morse to English, Enter 2 for English to Morse: ')
+        if select not in ['1', '2']:
+            raise ValueError('Invalid Input. Please enter 1 or 2')
 
-if select == '1':
-    morse_code = input('Enter Morse Code: ')
-    print(morse_to_english(morse_code))
-elif select == '2':
-    english = input('Enter English: ')
-    print(english_to_morse(english))
+        if select == '1':
+            morse_code = input('Enter Morse Code: ')
+            print(morse_to_english(morse_code))
+        elif select == '2':
+            english = input('Enter English: ')
+            print(english_to_morse(english))
+    except ValueError as ve:
+        print(ve)
+
+if __name__ == '__main__':
+    main()
